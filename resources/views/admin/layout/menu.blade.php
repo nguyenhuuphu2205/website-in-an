@@ -63,9 +63,7 @@
             <li>
                 <a ><i class="fa fa-bar-chart-o fa-fw"></i> Thông tin website<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li>
-                        <a href="admin/thongtinwebsite/danhsachtinnhan">Danh sách tin nhắn</a>
-                    </li>
+
                     <li>
                         <a href="admin/thongtinwebsite/sua">Sửa</a>
                     </li>
