@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cửa cuốn AustDoor">
+    <meta name="description" content="In ấn Cường Hải">
     <meta name="author" content="">
     <title>Admin - In Ấn Cường Hải</title>
     <base href="{{asset('')}}">

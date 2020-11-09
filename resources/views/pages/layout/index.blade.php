@@ -6,8 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Công ty TNHH Gia Công, Thương Mại và Dịch Vụ Cường Hải</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Chuyên nhận in gia công trên mọi vật liệu và cung cấp các loại máy in, vật liệu in, máy phụ trợ." name="description">
+  <meta content="in gia công trên vật liệu, cung cấp máy in,  vật liệu in, máy phụ trợ." name="keywords">
   <base href="{{asset('')}}">
 
   <!-- Favicons -->
