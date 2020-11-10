@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\SanPhamIn;
 use App\Models\VatLieuIn;
 use App\Models\MayIn;
-
+use App\Models\Video;
 class PageController extends Controller
 {
     function __construct()
@@ -80,6 +80,11 @@ class PageController extends Controller
         $danhmuc = new DanhMuc();
         $danhmuc->ten="Kết quả tìm kiếm cho từ khóa: ".$request->tukhoa;
         return view('pages.danhmuc',['mayins'=>$mayins,'danhmuc'=>$danhmuc]);
+
+    }
+    public function video(){
+        $videos = Video::all();
+        return view('pages.video',['videos'=>$videos]);
 
     }
 }

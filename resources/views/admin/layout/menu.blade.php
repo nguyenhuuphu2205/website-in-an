@@ -61,6 +61,18 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Video<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/video/danhsach">Danh Sách</a>
+                    </li>
+                    <li>
+                        <a href="admin/video/them">Thêm</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a ><i class="fa fa-bar-chart-o fa-fw"></i> Thông tin website<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
 

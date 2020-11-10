@@ -8,6 +8,7 @@ use App\Http\Controllers\SanPhamInController;
 use App\Http\Controllers\ThongTinWebsiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VatLieuInController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,9 +71,18 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function (){
         Route::post('sua',[ThongTinWebsiteController::class,'postSua']);
      
     }) ;
+    Route::group(['prefix'=>'video'],function (){
+        Route::get('them',[VideoController::class,'getThem']);
+        Route::get('sua/{id}',[VideoController::class,'getSua']);
+        Route::post('sua/{id}',[VideoController::class,'postSua']);
+        Route::get('danhsach',[VideoController::class,'danhsach']);
+        Route::post('them',[VideoController::class,'postThem']);
+        Route::get('xoa/{id}',[VideoController::class,'xoa']);
+    }) ;
  });
 
  //Route for fontend
+ Route::get('/',[PageController::class,'trangchu']);
  Route::get('trangchu',[PageController::class,'trangchu']);
  Route::get('danh-muc/tat-ca',[PageController::class,'tatca']);
  Route::get('danh-muc/{id}',[PageController::class,'danhmuc']);
@@ -81,6 +91,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function (){
  Route::get('vat-lieu-in/{id}',[PageController::class,'vatlieuin']);
  Route::get('san-pham-in/{id}',[PageController::class,'sanphamin']);
  Route::post('tim-kiem',[PageController::class,'timkiem']);
+ Route::get('video-san-xuat-in-an',[PageController::class,'video']);
 
 
 

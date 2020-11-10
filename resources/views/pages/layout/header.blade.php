@@ -56,6 +56,7 @@
             </ul>
           </li>
           <li><a href="trangchu#sanphamin">Sản phẩm in</a></li>
+          <li><a href="video-san-xuat-in-an">Video</a></li>
           <li><a href="trangchu#khachhang">Khách hàng</a></li>
          
           <!-- <li><a href="#team">Thành viên</a></li> -->
