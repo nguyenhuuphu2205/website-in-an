@@ -40,6 +40,10 @@
                             <input class="form-control" name="Email" placeholder="Nhập email" required value="{{$thongtinwebsite->email}}"/>
                         </div>
                         <div class="form-group">
+                            <label>Zalo</label>
+                            <input class="form-control" name="Zalo" placeholder="Nhập zalo" required value="{{$thongtinwebsite->zalo}}"/>
+                        </div>
+                        <div class="form-group">
                             <label>Mô tả </label>
                             <input class="form-control" name="MoTa" placeholder="Nhập mô tả" required value="{{$thongtinwebsite->mo_ta}}"/>
                         </div>

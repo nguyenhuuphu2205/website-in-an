@@ -2,7 +2,7 @@
  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto pt-1" style="font-size: 1rem;">
-        <i class="icofont-phone"></i> Hotline: {{$thongtinwebsite->sdt}}
+        <i class="icofont-phone"></i> Hotline: {{$thongtinwebsite->sdt}} |Zalo: {{$thongtinwebsite->zalo}}
         <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">{{$thongtinwebsite->email}}</a>
        
       </div>
@@ -20,7 +20,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <img src="assets/img/logo.png" width="70px" class="img-fluid"/>
-      <h1 class="logo mr-auto"><a href="trangchu">Cường Hải<span>.</span></a> <br/> <a style="font-size: 0.8rem; color: red; text-shadow: saddlebrown;" class="d-block"><br>Hotline: 0865.028.656</a></h1>
+      <h1 class="logo mr-auto"><a href="trangchu">Cường Hải<span>.</span></a> <br/> <a style="font-size: 0.8rem; color: red; text-shadow: saddlebrown;" class="d-block"><br>Hotline: {{$thongtinwebsite->sdt}}</a></h1>
       
      
     

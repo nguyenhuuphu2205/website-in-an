@@ -27,6 +27,7 @@
               <br>
               <strong>Địa chỉ</strong>: {{$thongtinwebsite->dia_chi}} <br>
               <strong>SĐT:</strong> {{$thongtinwebsite->sdt}}<br>
+              <strong>Zalo:</strong> {{$thongtinwebsite->zalo}}<br>
               <strong>Email:</strong>{{$thongtinwebsite->email}}<br>
             </p>
           </div>
@@ -39,6 +40,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="danh-muc/tat-ca">Thiết bị</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="trangchu#sanphamin">Sản phẩm in</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="trangchu#khachhang">Khách hàng</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="video-san-xuat-in-an">Video</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="trangchu#contact">Liên hệ</a></li>
               
             </ul>

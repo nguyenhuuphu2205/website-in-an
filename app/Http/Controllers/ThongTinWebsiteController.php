@@ -16,6 +16,7 @@ class ThongTinWebsiteController extends Controller
         $thong_tin_website->sdt = $request->SDT;
         $thong_tin_website->dia_chi = $request->DiaChi;
         $thong_tin_website->email = $request->Email;
+        $thong_tin_website->zalo = $request->Zalo;
         $thong_tin_website->mo_ta = $request->MoTa;
         $thong_tin_website->save();
         return redirect('admin/thongtinwebsite/sua')->with('thongbao','Sửa thành công');
