@@ -13,7 +13,7 @@
             <h2 class="text-primary pl-3"><b>{{$sanphamin->ten}}</b></h2>
             <ol>
               <li><a href="trangchu">Trang chủ</a></li>
-            <li><a href="vat-lieu-in/{{$vatlieuin->id}}">{{$vatlieuin->ten}}</a></li>
+            <li><a href="vat-lieu-in/{{$vatlieuin->id}}/{{$vatlieuin->ten_khong_dau}}">{{$vatlieuin->ten}}</a></li>
             <li>{{$sanphamin->ten}}</li>
             </ol>
           </div>
@@ -32,8 +32,8 @@
           <div class="row">
             <div class="col-md-5">
               <!-- <img src="assets/img/printer/may1.png" alt="" class="img-fluid"> -->
-            <a href="san-pham-in/{{$sanphamin->id}}#" class="pop">
-              <img src="upload/sanphamin/{{$sanphamin->hinh_anh}}" class="img-fluid">
+            <a href="san-pham-in/{{$sanphamin->id}}/{{$sanphamin->ten_khong_dau}}#" class="pop">
+              <img data-src="upload/sanphamin/{{$sanphamin->hinh_anh}}" class="img-fluid lozad" alt="{{$sanphamin->ten_khong_dau}}">
             </a>
          
             
@@ -65,11 +65,11 @@
               @foreach($sanphamintuongtu as $sp)
             <div class="col-md-3 pl-1 pr-1 pb-2">
               <div class="card"  style="min-height: 450px" >
-              <img class="card-img-top" src="upload/sanphamin/{{$sp->hinh_anh}}" alt="{{$sp->ten}}" width="100%" height="250px">
+              <img class="card-img-top lozad" data-src="upload/sanphamin/{{$sp->hinh_anh}}" alt="{{$sp->ten_khong_dau}}" width="100%" height="250px">
                 <div class="card-body">
                   <h5 class="card-title">{{$sp->ten}}</h5>
                 <p class="card-text text-danger">Liên hệ: {{$thongtinwebsite->sdt}}</p>
-                <a href="san-pham-in/{{$sp->id}}" class="btn btn-outline-primary ">Xem chi tiết</a>
+                <a href="san-pham-in/{{$sp->id}}/{{$sp->ten_khong_dau}}" class="btn btn-outline-primary ">Xem chi tiết</a>
                 </div>
               </div>
             </div>
@@ -94,7 +94,7 @@
       <div class="modal-content">              
         <div class="modal-body">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Đóng</span></button>
-          <img src="" class="imagepreview" style="width: 100%;" >
+          <img data-src="" class="imagepreview lozad" style="width: 100%;" >
         </div>
       </div>
     </div>

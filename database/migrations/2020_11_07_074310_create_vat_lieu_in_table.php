@@ -16,6 +16,7 @@ class CreateVatLieuInTable extends Migration
         Schema::create('vat_lieu_in', function (Blueprint $table) {
             $table->id();
             $table->string('ten');
+            $table->string('ten_khong_dau');
             $table->timestamps();
         });
     }

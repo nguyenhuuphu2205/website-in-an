@@ -6,6 +6,7 @@ use App\Models\DanhMuc;
 use App\Models\MayIn;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class MayInController extends Controller
 {
@@ -23,15 +24,16 @@ class MayInController extends Controller
         ]);
         $may_in = new MayIn();
         $may_in -> ten = $request -> Ten;
+        $may_in -> ten_khong_dau = changeTitle($request->Ten);
         $may_in -> ma_san_pham = $request->MaSanPham;
         $may_in -> mo_ta = $request->MoTa;
         $may_in ->danh_muc = $request->DanhMucCha;
         $file = $request ->file('AnhDaiDien');
         $name = $file->getClientOriginalName();
-        $Hinh =  Str::random(4)."_".$name;
+        $Hinh =  Str::random(4)."_".$name."_".$may_in->ten_khong_dau;
         while (file_exists('upload/mayin/'.$Hinh))
         {
-            $Hinh = Str::random(4)."_".$name;
+            $Hinh = Str::random(4)."_".$name."_".$may_in->ten_khong_dau;
         }
         $file ->move('upload/mayin/',$Hinh);
         $may_in -> hinh_anh = $Hinh;
@@ -53,6 +55,7 @@ class MayInController extends Controller
         ]);
         $may_in = MayIn::find($id);
         $may_in->ten = $request->Ten;
+        $may_in -> ten_khong_dau = changeTitle($request->Ten);
         $may_in->ma_san_pham = $request->MaSanPham;
         $may_in->mo_ta = $request->MoTa;
         $may_in->danh_muc = $request->DanhMucCha;
@@ -69,10 +72,10 @@ class MayInController extends Controller
                 ]);
             $file = $request ->file('AnhDaiDien');
             $name = $file->getClientOriginalName();
-            $Hinh = Str::random(4)."_".$name;
+            $Hinh = Str::random(4)."_".$name."_".$may_in->ten_khong_dau;
             while (file_exists('upload/mayin/'.$Hinh))
             {
-                $Hinh = Str::random(4)."_".$name;
+                $Hinh = Str::random(4)."_".$name."_".$may_in->ten_khong_dau;
             }
             $file ->move('upload/mayin/',$Hinh);
             $may_in -> hinh_anh = $Hinh;
@@ -87,7 +90,19 @@ class MayInController extends Controller
         return view('admin.mayin.danhsach',['mayins'=>$may_ins]);
     }
     public function xoa($id){
+        $mayin=MayIn::find($id);
+        $file =public_path('upload/mayin/'.$mayin->hinh_anh);
+        if(file_exists($file)){
+            $img= unlink($file);
+        }
         MayIn::destroy($id);
         return redirect('admin/mayin/danhsach')->with('thongbao','Xóa thành công');
+    }
+    public function tenKhongDau(){
+        $mayins = MayIn::all();
+        foreach($mayins as $may){
+            $may->ten_khong_dau = changeTitle($may->ten);
+            $may->save();
+        }
     }
 }

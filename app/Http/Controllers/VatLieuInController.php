@@ -13,6 +13,7 @@ class VatLieuInController extends Controller
     public function postThem(Request $request){
         $vat_lieu_in = new VatLieuIn();
         $vat_lieu_in->ten = $request->Ten;
+        $vat_lieu_in->ten_khong_dau = changeTitle($request->Ten);
         $vat_lieu_in->save();
         return redirect('admin/vatlieuin/them')->with('thongbao','Thêm thành công');
     }
@@ -23,6 +24,7 @@ class VatLieuInController extends Controller
     public function postSua($id,Request $request){
         $vat_lieu_in = VatLieuIn::find($id);
         $vat_lieu_in->ten = $request->Ten;
+        $vat_lieu_in->ten_khong_dau = changeTitle($request->Ten);
         $vat_lieu_in->save();
         return redirect('admin/vatlieuin/sua/'.$id)->with('thongbao','Sửa thành công');
     }
@@ -37,6 +39,13 @@ class VatLieuInController extends Controller
         }else{
             $vatlieu->delete();
             return redirect('admin/vatlieuin/danhsach')->with('thongbao','Xóa thành công');
+        }
+    }
+    public function tenKhongDau(){
+        $vatlieuins = VatLieuIn::all();
+        foreach($vatlieuins as $v){
+            $v->ten_khong_dau = changeTitle($v->ten);
+            $v->save();
         }
     }
 }

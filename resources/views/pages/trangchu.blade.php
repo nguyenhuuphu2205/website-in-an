@@ -28,7 +28,7 @@
 
         <div class="row">
           <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/img/about.png" class="img-fluid" alt="">
+            <img data-src="assets/img/about.png" class="img-fluid lozad" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <h3 class="text-primary">CÔNG TY TNHH GIA CÔNG, THƯƠNG MẠI DỊCH VỤ CƯỜNG HẢI</h3>
@@ -200,16 +200,16 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100" >
             <div class="member">
               <div class="member-img" >
-              <img src="upload/mayin/{{$may->hinh_anh}}" class="img-fluid" alt="" style="height: 300px; width:100%">
+              <img data-src="upload/mayin/{{$may->hinh_anh}}" class="img-fluid lozad" alt="{{$may->ten_khong_dau}}" style="height: 300px; width:100%">
                 <div class="social">
                  
-                  <a href="may-in/{{$may->id}}"><i class="icofont-info"></i></a>
+                  <a href="may-in/{{$may->id}}/{{$may->ten_khong_dau}}"><i class="icofont-info"></i></a>
 
                 </div>
               </div>
               <div class="member-info " >
                 <h4>{{$may->ten}}</h4>
-              <a href="may-in/{{$may->id}}">Xem chi tiết</a>
+              <a href="may-in/{{$may->id}}/{{$may->ten_khong_dau}}">Xem chi tiết</a>
               </div>
             </div>
           </div>
@@ -220,7 +220,7 @@
 
         </div>
         <div class="row justify-content-center">
-          <p class=""><a href="danh-muc/{{$danhmuc->id}}" class="text-danger">Xem thêm</a></p>
+          <p class=""><a href="danh-muc/{{$danhmuc->id}}/{{$danhmuc->ten_khong_dau}}" class="text-danger">Xem thêm</a></p>
         </div>
         <hr>
         
@@ -437,16 +437,13 @@
               $count_san_pham_in ++;
               ?>
               <div class="col-lg-4 col-md-6 portfolio-item filter-{{$vatlieu->id}} ">
-              <img src="upload/sanphamin/{{$sp->hinh_anh}}" width="100%" height="450px" alt="">
+              <img data-src="upload/sanphamin/{{$sp->hinh_anh}}"  class="lozad" width="100%" height="450px">
                 <div class="portfolio-info">
                <div>
                 <h4>{{$sp->ten}}</h4>
-                 </div> 
-                  {{-- <p>App</p> --}}
-                  {{-- <br>
-                  <br> --}}
+                 </div>
                   <a href="upload/sanphamin/{{$sp->hinh_anh}}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-zoom-in"></i></a>
-                  <a href="san-pham-in/{{$sp->id}}" class="details-link" title="More Details"><i class="bx bx-info-circle"></i></a>
+                  <a href="san-pham-in/{{$sp->id}}/{{$sp->ten_khong_dau}}" class="details-link" title="More Details"><i class="bx bx-info-circle"></i></a>
                 </div>
               </div>
 
@@ -472,7 +469,7 @@
         <div class="owl-carousel testimonials-carousel">
 
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+            <img data-src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img lozad" alt="">
             <h3>Hồng Phước</h3>
             <h4>Ceo &amp; Founder Cpro VN</h4>
             <p>
@@ -483,7 +480,7 @@
           </div>
 
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+            <img data-src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img lozad" alt="">
             <h3>Nguyễn Phan</h3>
             <h4>CEO Fortune Host</h4>
             <p>
@@ -511,19 +508,19 @@
 
           <div class="col-lg-3 col-md-4 col-6 d-flex align-items-center justify-content-center">
           
-            <img src="assets/img/company/cpro.png" class="img-fluid" alt="">
+            <img data-src="assets/img/company/cpro.png" class="img-fluid lozad" alt="">
           </div>
 
           <div class="col-lg-3 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/company/fhf.png" class="img-fluid" alt="">
+            <img data-src="assets/img/company/fhf.png" class="img-fluid lozad" alt="">
           </div>
 
           <div class="col-lg-3 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/company/youwei.png" class="img-fluid" alt="">
+            <img data-src="assets/img/company/youwei.png" class="img-fluid lozad" alt="">
           </div>
 
           <div class="col-lg-3 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/company/dmtech.png" class="img-fluid" alt="">
+            <img data-src="assets/img/company/dmtech.png" class="img-fluid lozad" alt="">
           </div>
 
 
@@ -573,7 +570,7 @@
 
           <div class="col-lg-6 ">
             
-            <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1315.8450543415663!2d106.0769261522784!3d21.121660436172984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1604543905211!5m2!1svi!2s" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+            <iframe class="mb-4 mb-lg-0 lozad" data-src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1315.8450543415663!2d106.0769261522784!3d21.121660436172984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1604543905211!5m2!1svi!2s" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
           </div>
 
           <div class="col-lg-6">

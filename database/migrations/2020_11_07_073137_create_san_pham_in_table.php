@@ -16,6 +16,7 @@ class CreateSanPhamInTable extends Migration
         Schema::create('san_pham_in', function (Blueprint $table) {
             $table->id();
             $table->string('ten');
+            $table->string('ten_khong_dau');
             $table->string('hinh_anh');
             $table->text('mo_ta');
             $table->bigInteger('vat_lieu');

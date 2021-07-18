@@ -36,11 +36,11 @@
               @foreach($mayins as $mayin)
             <div class="col-md-4 pl-1 pr-1 pb-2">
               <div class="card" style="height: 100%">
-              <img class="card-img-top" src="upload/mayin/{{$mayin->hinh_anh}}" alt="{{$mayin->ten}}" style="height: 320px; width:100%" >
+              <img class="card-img-top lozad" data-src="upload/mayin/{{$mayin->hinh_anh}}" alt="{{$mayin->ten_khong_dau}}" style="height: 320px; width:100%" >
                 <div class="card-body mb-3">
                   <h5 class="card-title">{{$mayin->ten}}</h5>
                 <p class="card-text text-danger">Liên hệ: {{$thongtinwebsite->sdt}}</p>
-                <a href="may-in/{{$mayin->id}}" class="btn btn-outline-primary ">Xem chi tiết</a>
+                <a href="may-in/{{$mayin->id}}/{{$mayin->ten_khong_dau}}" class="btn btn-outline-primary ">Xem chi tiết</a>
                 </div>
               </div>
             </div>

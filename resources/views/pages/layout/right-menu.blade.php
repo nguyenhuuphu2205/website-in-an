@@ -8,15 +8,15 @@
                 <a href="#danhmuc-{{$danhmuc->id}}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{$danhmuc->ten}}</a>
                     
                 <ul class="collapse list-unstyled" id="danhmuc-{{$danhmuc->id}}">
-                    <li><a href="danh-muc/{{$danhmuc->id}}"><span class="fa fa-chevron-right mr-2"></span>Tất cả</a></li>
+                    <li><a href="danh-muc/{{$danhmuc->id}}/{{$danhmuc->ten_khong_dau}}"><span class="fa fa-chevron-right mr-2"></span>Tất cả</a></li>
                     @foreach($danhmuc->danhMucCon as $dm)
-                    <li><a href="danh-muc/{{$dm->id}}"><span class="fa fa-chevron-right mr-2"></span> {{$dm->ten}}</a></li>
+                    <li><a href="danh-muc/{{$dm->id}}/{{$dm->ten_khong_dau}}"><span class="fa fa-chevron-right mr-2"></span> {{$dm->ten}}</a></li>
                     @endforeach
                 </ul>
               
               </li>
               @else
-            <li><a href="danh-muc/{{$danhmuc->id}}"><span class="fa fa-chevron-right"></span> {{$danhmuc->ten}}</a></li>
+            <li><a href="danh-muc/{{$danhmuc->id}}/{{$danhmuc->ten_khong_dau}}"><span class="fa fa-chevron-right"></span> {{$danhmuc->ten}}</a></li>
               @endif
               @endforeach
             

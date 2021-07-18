@@ -23,14 +23,15 @@ class SanPhamInController extends Controller
         ]);
         $sanphamin = new SanPhamIn();
         $sanphamin->ten = $request->Ten;
+        $sanphamin->ten_khong_dau = changeTitle($request->Ten);
         $sanphamin->mo_ta = $request->MoTa;
         $sanphamin->vat_lieu = $request->VatLieu;
         $file = $request ->file('AnhDaiDien');
         $name = $file->getClientOriginalName();
-        $Hinh =  Str::random(4)."_".$name;
+        $Hinh =  Str::random(4)."_".$name."_".$sanphamin->ten_khong_dau;
         while (file_exists('upload/sanphamin/'.$Hinh))
         {
-            $Hinh = Str::random(4)."_".$name;
+            $Hinh = Str::random(4)."_".$name."_".$sanphamin->ten_khong_dau;
         }
         $file ->move('upload/sanphamin/',$Hinh);
         $sanphamin -> hinh_anh = $Hinh;
@@ -53,6 +54,7 @@ class SanPhamInController extends Controller
         ]);
         $sanphamin = SanPhamIn::find($id);
         $sanphamin->ten = $request->Ten;
+        $sanphamin->ten_khong_dau = changeTitle($request->Ten);
         $sanphamin->mo_ta = $request->MoTa;
         $sanphamin->vat_lieu = $request->VatLieu;
         if($request->hasFile('AnhDaiDien'))
@@ -68,10 +70,10 @@ class SanPhamInController extends Controller
                 ]);
             $file = $request ->file('AnhDaiDien');
             $name = $file->getClientOriginalName();
-            $Hinh = Str::random(4)."_".$name;
+            $Hinh = Str::random(4)."_".$name."_".$sanphamin->ten_khong_dau;
             while (file_exists('upload/sanphamin/'.$Hinh))
             {
-                $Hinh = Str::random(4)."_".$name;
+                $Hinh = Str::random(4)."_".$name."_".$sanphamin->ten_khong_dau;
             }
             $file ->move('upload/sanphamin/',$Hinh);
             $sanphamin -> hinh_anh = $Hinh;
@@ -84,7 +86,19 @@ class SanPhamInController extends Controller
         return view('admin.sanphamin.danhsach',['sanphamins'=>$sanphamins]);
     }
     public function xoa($id){
+        $sanphamin=SanPhamIn::find($id);
+        $file =public_path('upload/sanphamin/'.$sanphamin->hinh_anh);
+        if(file_exists($file)){
+            $img= unlink($file);
+        }
         SanPhamIn::destroy($id);
         return redirect('admin/sanphamin/danhsach')->with('thongbao','Xóa thành công');
+    }
+    public function tenKhongDau(){
+        $sanphamins = SanPhamIn::all();
+        foreach($sanphamins as $sp){
+            $sp->ten_khong_dau = changeTitle($sp->ten);
+            $sp->save();
+        }
     }
 }

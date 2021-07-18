@@ -16,6 +16,7 @@ class DanhMucController extends Controller
        
         $danh_muc = new DanhMuc();
         $danh_muc->ten = $request->Ten;
+        $danh_muc->ten_khong_dau = changeTitle($request->Ten);
         $danh_muc->danh_muc_cha = $request->danh_muc_cha;
         $danh_muc->noi_bat = $request->NoiBat;
         $danh_muc->save();
@@ -29,6 +30,7 @@ class DanhMucController extends Controller
     public function postSua($id, Request $request){
         $danhmuc = DanhMuc::find($id);
         $danhmuc->ten = $request->Ten;
+        $danhmuc->ten_khong_dau = changeTitle($request->Ten);
         $danhmuc->danh_muc_cha = $request->danh_muc_cha;
         $danhmuc->noi_bat = $request->NoiBat;
         $danhmuc->save();
@@ -52,5 +54,12 @@ class DanhMucController extends Controller
     public function mayIn($id){
         $mayins = MayIn::where('danh_muc',$id)->get();
         return view('admin.mayin.danhsach',['mayins'=>$mayins]);
+    }
+    public function tenKhongDau(){
+        $danhmucs = DanhMuc::all();
+        foreach($danhmucs as $dm){
+            $dm->ten_khong_dau = changeTitle($dm->ten);
+            $dm->save();
+        }
     }
 }

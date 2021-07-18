@@ -2,7 +2,7 @@
  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto pt-1" style="font-size: 1rem;">
-        <i class="icofont-phone"></i> Hotline: {{$thongtinwebsite->sdt}} |Zalo: {{$thongtinwebsite->zalo}}
+        <i class="icofont-phone"></i> Hotline: {{$thongtinwebsite->sdt}} | Zalo: {{$thongtinwebsite->zalo}}
         <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">{{$thongtinwebsite->email}}</a>
        
       </div>
@@ -19,8 +19,8 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-      <img src="assets/img/logo.png" width="70px" class="img-fluid"/>
-      <h1 class="logo mr-auto"><a href="trangchu">Cường Hải<span>.</span></a> <br/> <a style="font-size: 0.8rem; color: red; text-shadow: saddlebrown;" class="d-block"><br>Hotline: {{$thongtinwebsite->sdt}}</a></h1>
+      <img data-src="assets/img/logo.png" width="70px" class="img-fluid lozad"/>
+<h1 class="logo mr-auto"><a href="trangchu">Cường Hải<span>.</span></a> <br/> <a style="font-size: 0.8rem; color: red; text-shadow: saddlebrown;" class="d-block"><br>Hotline: {{$thongtinwebsite->sdt}}</a></h1>
       
      
     
@@ -40,12 +40,12 @@
               @if(count($dm->danhMucCon)>0)
               class="drop-down"
               @endif
-            ><a href="danh-muc/{{$dm->id}}">{{$dm->ten}}</a>
+            ><a href="danh-muc/{{$dm->id}}/{{$dm->ten_khong_dau}}">{{$dm->ten}}</a>
                 @if(count($dm->danhMucCon)>0)
              
                 <ul>
                   @foreach($dm->danhMucCon as $d)
-                  <li><a href="danh-muc/{{$d->id}}">{{$d->ten}}</a></li>
+                  <li><a href="danh-muc/{{$d->id}}/{{$d->ten_khong_dau}}">{{$d->ten}}</a></li>
                   @endforeach
                 
                 </ul>

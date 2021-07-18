@@ -16,6 +16,7 @@ class Danhmuc extends Migration
         Schema::create('danh_muc', function (Blueprint $table) {
             $table->id();
             $table->string('ten');
+            $table->string('ten_khong_dau');
             $table->bigInteger('danh_muc_cha');
             $table->timestamps();
         });

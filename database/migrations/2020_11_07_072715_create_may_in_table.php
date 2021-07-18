@@ -16,6 +16,7 @@ class CreateMayInTable extends Migration
         Schema::create('may_in', function (Blueprint $table) {
             $table->id();
             $table->string('ten');
+            $table->string('ten_khong_dau');
             $table->string('ma_san_pham');
             $table->string('hinh_anh');
             $table->text('mo_ta');

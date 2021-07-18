@@ -40,7 +40,7 @@
                 $code_embed_array = explode("/", $video->link); 
                 $code_embed = end($code_embed_array);
                 ?>
-                 <iframe width="100%" height="320px" src="https://www.youtube.com/embed/{{$code_embed}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                 <iframe  class="lozad" width="100%" height="320px" data-src="https://www.youtube.com/embed/{{$code_embed}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="card-body mb-3 justify-content-center">
                   <h5 class="card-title text-center">{{$video->ten}}</h5>
                 </div>

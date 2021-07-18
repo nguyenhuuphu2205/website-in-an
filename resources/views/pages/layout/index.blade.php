@@ -8,7 +8,7 @@
   <title>Công ty TNHH Gia Công, Thương Mại và Dịch Vụ Cường Hải</title>
   <meta content="Chuyên nhận in gia công trên mọi vật liệu và cung cấp các loại máy in, vật liệu in, máy phụ trợ." name="description">
   <meta content="in gia công trên vật liệu, cung cấp máy in,  vật liệu in, máy phụ trợ." name="keywords">
-  <meta property="og:image" name="ogimage" content=" http://incuonghai.com/assets/img/logo.png">
+  <meta property="og:image" name="ogimage" content="http://incuonghai.bkav.ai/assets/img/logo.png">
   <base href="{{asset('')}}">
 
   <!-- Favicons -->
@@ -60,6 +60,11 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/lozad.min.js"></script>
+  <script>
+    const observer = lozad();
+    observer.observe();
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

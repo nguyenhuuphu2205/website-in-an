@@ -20,14 +20,14 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <img src="assets/img/logo.png" width="90px" class="img-fluid d-inline"/>
+            <img data-src="assets/img/logo.png" width="90px" class="img-fluid d-inline lozad"/>
             <h3 class="d-inline">CƯỜNG HẢI<span>.</span></h3>
           <p class="border-bottom font-weight-bold">{{$thongtinwebsite->mo_ta}}</p>
             <p>
               <br>
               <strong>Địa chỉ</strong>: {{$thongtinwebsite->dia_chi}} <br>
-              <strong>SĐT:</strong> {{$thongtinwebsite->sdt}}<br>
-              <strong>Zalo:</strong> {{$thongtinwebsite->zalo}}<br>
+	      <strong>SĐT:</strong> {{$thongtinwebsite->sdt}}<br>
+		<strong>Zalo:</strong> {{$thongtinwebsite->zalo}}<br>
               <strong>Email:</strong>{{$thongtinwebsite->email}}<br>
             </p>
           </div>
@@ -39,8 +39,8 @@
               <li><i class="bx bx-chevron-right"></i> <a href="trangchu#about">Giới thiệu</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="danh-muc/tat-ca">Thiết bị</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="trangchu#sanphamin">Sản phẩm in</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="trangchu#khachhang">Khách hàng</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="video-san-xuat-in-an">Video</a></li>
+	      <li><i class="bx bx-chevron-right"></i> <a href="trangchu#khachhang">Khách hàng</a></li>
+		 <li><i class="bx bx-chevron-right"></i> <a href="video-san-xuat-in-an">Video</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="trangchu#contact">Liên hệ</a></li>
               
             </ul>
@@ -50,7 +50,7 @@
             <h4>DANH MỤC</h4>
             <ul>
             @foreach($danhmuccha as $dm)
-            <li><i class="bx bx-chevron-right"></i> <a href="danh-muc/{{$dm->id}}">{{$dm->ten}}</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="danh-muc/{{$dm->id}}/{{$dm->ten_khong_dau}}">{{$dm->ten}}</a></li>
             @endforeach
             </ul>
           </div>
@@ -91,7 +91,7 @@
             <div class="hotline-phone-ring-circle-fill"></div>
             <div class="hotline-phone-ring-img-circle">
                 <a href="tel:{{$thongtinwebsite->sdt}}" class="pps-btn-img">
-                    <img src="assets/img/icon-call-nh.png" alt="Gọi điện thoại" width="50">
+                    <img data-src="assets/img/icon-call-nh.png" class="lozad" alt="Gọi điện thoại" width="50">
                 </a>
             </div>
         </div>

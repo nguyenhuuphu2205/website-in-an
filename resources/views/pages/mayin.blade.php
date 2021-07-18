@@ -13,7 +13,7 @@
             <h2 class="text-primary pl-3"><b>{{$mayin->ten}}</b></h2>
             <ol>
               <li><a href="trangchu">Trang chủ</a></li>
-            <li><a href="danh-muc/{{$danhmuc->id}}">{{$mayin->danhMuc->ten}}</a></li>
+            <li><a href="danh-muc/{{$danhmuc->id}}/{{$danhmuc->ten_khong_dau}}">{{$mayin->danhMuc->ten}}</a></li>
             <li>{{$mayin->ten}}</li>
             </ol>
           </div>
@@ -32,8 +32,8 @@
           <div class="row">
             <div class="col-md-5">
               <!-- <img src="assets/img/printer/may1.png" alt="" class="img-fluid"> -->
-            <a href="may-in/{{$mayin->id}}#" class="pop">
-              <img src="upload/mayin/{{$mayin->hinh_anh}}" class="img-fluid">
+            <a href="may-in/{{$mayin->id}}/{{$mayin->ten_khong_dau}}#" class="pop">
+              <img data-src="upload/mayin/{{$mayin->hinh_anh}}" class="img-fluid lozad" alt="{{$mayin->ten_khong_dau}}">
             </a>
          
             
@@ -65,11 +65,11 @@
               @foreach($mayintuongtu as $may)
             <div class="col-md-3 pl-1 pr-1 pb-2">
               <div class="card"  style="min-height: 450px" >
-              <img class="card-img-top" src="upload/mayin/{{$may->hinh_anh}}" alt="{{$may->ten}}" width="100%" height="250px">
+              <img class="card-img-top lozad" data-src="upload/mayin/{{$may->hinh_anh}}" alt="{{$may->ten_khong_dau}}" width="100%" height="250px">
                 <div class="card-body">
                   <h5 class="card-title">{{$may->ten}}</h5>
                 <p class="card-text text-danger">Liên hệ: {{$thongtinwebsite->sdt}}</p>
-                <a href="may-in/{{$may->id}}" class="btn btn-outline-primary ">Xem chi tiết</a>
+                <a href="may-in/{{$may->id}}/{{$may->ten_khong_dau}}" class="btn btn-outline-primary ">Xem chi tiết</a>
                 </div>
               </div>
             </div>
